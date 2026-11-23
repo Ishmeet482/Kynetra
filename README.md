@@ -47,26 +47,6 @@ npm run preview
 
 The preview address is normally **http://127.0.0.1:4173/**. Stop either server with `Ctrl+C`. `npm run build` writes a static site to `dist/`; it can be served by a static host. Relative asset paths support hosting beneath a subdirectory. Hosted camera access requires HTTPS.
 
-## Deploy on Vercel
-
-Import the GitHub repository into Vercel and use these settings:
-
-| Setting | Value |
-| --- | --- |
-| Framework preset | **Vite** |
-| Root directory | Repository root (`.`) |
-| Install command | `npm ci` |
-| Build command | `npm run build` |
-| Output directory | `dist` |
-| Node.js version | A Vercel-supported version satisfying `package.json` (Node 24+ is allowed) |
-| Required environment variables | None |
-
-The application is a static Vite build with no server routes or backend. Vite copies the worker, favicon, and local icon assets from `public/` into `dist/`; deploy the complete output directory. No custom `vercel.json` or SPA rewrite is needed for this single-page interface, which has no client-side URL routing.
-
-Vercel's HTTPS URL satisfies the browser's secure-context requirement for webcam access. Users still need to grant camera permission, and hand tracking still downloads its pinned runtime/model assets from external servers. Leave `VITE_PERF_MONITOR` unset for the normal production build.
-
-See [Vercel's Vite deployment documentation](https://vercel.com/docs/frameworks/frontend/vite).
-
 ## Controls
 
 ### Hand gestures
