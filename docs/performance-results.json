@@ -1,0 +1,879 @@
+{
+  "audit_date": "2026-11-19",
+  "method": "Sequential development-server runs; synthetic webcam without hands; 1.8s warmup per scenario, then 30 pointer moves with 250ms waits. See performance.md for interpretation.",
+  "runs": {
+    "baseline_primary": {
+      "environment": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (AMD, ANGLE Metal Renderer: AMD Radeon Pro 5500M, Unspecified Version)",
+        "dpr": 1,
+        "viewport": [
+          1280,
+          900
+        ]
+      },
+      "measurements": [
+        {
+          "name": "assembly-mouse",
+          "fps": 59.62723602135078,
+          "frameMs": 16.770859538784073,
+          "frameP95": 16.799999999999272,
+          "render": {
+            "mean": 0.3282426776964545,
+            "p95": 0.5,
+            "count": 478
+          },
+          "update": {
+            "mean": 0.14769874478857886,
+            "p95": 0.3999999985098839,
+            "count": 478
+          },
+          "inference": {
+            "mean": 0,
+            "p95": 0,
+            "count": 0
+          },
+          "inferenceHz": 0,
+          "drawCalls": 16,
+          "triangles": 3630,
+          "backend": "off"
+        },
+        {
+          "name": "assembly-camera",
+          "fps": 15.675390921121943,
+          "frameMs": 63.79426229508198,
+          "frameP95": 66.70000000000073,
+          "render": {
+            "mean": 0.20650406521025713,
+            "p95": 0.30000000447034836,
+            "count": 123
+          },
+          "update": {
+            "mean": 63.141463414198014,
+            "p95": 65.19999999552965,
+            "count": 123
+          },
+          "inference": {
+            "mean": 64.08016528866507,
+            "p95": 65.10000000149012,
+            "count": 121
+          },
+          "inferenceHz": 15.416958654519973,
+          "drawCalls": 16,
+          "triangles": 3630,
+          "backend": "main"
+        },
+        {
+          "name": "simulation-mouse",
+          "fps": 60.002505323813104,
+          "frameMs": 16.665970772442588,
+          "frameP95": 16.799999999995634,
+          "render": {
+            "mean": 0.37187500004656615,
+            "p95": 0.5,
+            "count": 480
+          },
+          "update": {
+            "mean": 0.04812500014280279,
+            "p95": 0.10000000149011612,
+            "count": 480
+          },
+          "inference": {
+            "mean": 0,
+            "p95": 0,
+            "count": 0
+          },
+          "inferenceHz": 0,
+          "drawCalls": 15,
+          "triangles": 3630,
+          "backend": "main"
+        },
+        {
+          "name": "simulation-camera",
+          "fps": 16.025242863176718,
+          "frameMs": 62.40155038759692,
+          "frameP95": 66.80000000000291,
+          "render": {
+            "mean": 0.2030769231227728,
+            "p95": 0.30000000447034836,
+            "count": 130
+          },
+          "update": {
+            "mean": 61.625384615419,
+            "p95": 68.30000000447035,
+            "count": 130
+          },
+          "inference": {
+            "mean": 64.55967741934282,
+            "p95": 68.20000000298023,
+            "count": 124
+          },
+          "inferenceHz": 15.278838808242156,
+          "drawCalls": 15,
+          "triangles": 3630,
+          "backend": "main"
+        }
+      ],
+      "errors": []
+    },
+    "baseline_confirmation": {
+      "environment": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (AMD, ANGLE Metal Renderer: AMD Radeon Pro 5500M, Unspecified Version)",
+        "dpr": 1,
+        "viewport": [
+          1280,
+          900
+        ]
+      },
+      "measurements": [
+        {
+          "name": "assembly-mouse",
+          "fps": 59.627981399069924,
+          "frameMs": 16.770649895178206,
+          "frameP95": 16.700000000000728,
+          "render": {
+            "mean": 0.3456066944889693,
+            "p95": 0.5,
+            "count": 478
+          },
+          "update": {
+            "mean": 0.15271966522520555,
+            "p95": 0.3999999985098839,
+            "count": 478
+          },
+          "inference": {
+            "mean": 0,
+            "p95": 0,
+            "count": 0
+          },
+          "inferenceHz": 0,
+          "drawCalls": 16,
+          "triangles": 3630,
+          "backend": "off",
+          "video": null
+        },
+        {
+          "name": "assembly-camera",
+          "fps": 14.87859311926046,
+          "frameMs": 67.21065573770493,
+          "frameP95": 83.39999999999782,
+          "render": {
+            "mean": 0.23252032576053122,
+            "p95": 0.3999999985098839,
+            "count": 123
+          },
+          "update": {
+            "mean": 66.46016260127469,
+            "p95": 83.10000000149012,
+            "count": 123
+          },
+          "inference": {
+            "mean": 67.42148760305949,
+            "p95": 83,
+            "count": 121
+          },
+          "inferenceHz": 14.625714665600345,
+          "drawCalls": 16,
+          "triangles": 3630,
+          "backend": "main",
+          "video": {
+            "width": 640,
+            "height": 480,
+            "frameRate": 20
+          }
+        },
+        {
+          "name": "simulation-mouse",
+          "fps": 60.002505323813104,
+          "frameMs": 16.665970772442588,
+          "frameP95": 16.799999999995634,
+          "render": {
+            "mean": 0.3385416668218871,
+            "p95": 0.5999999940395355,
+            "count": 480
+          },
+          "update": {
+            "mean": 0.06229166661699613,
+            "p95": 0.19999999552965164,
+            "count": 480
+          },
+          "inference": {
+            "mean": 0,
+            "p95": 0,
+            "count": 0
+          },
+          "inferenceHz": 0,
+          "drawCalls": 15,
+          "triangles": 3630,
+          "backend": "main",
+          "video": null
+        },
+        {
+          "name": "simulation-camera",
+          "fps": 15.306622257053302,
+          "frameMs": 65.33119999999995,
+          "frameP95": 83.29999999999563,
+          "render": {
+            "mean": 0.22698412664116374,
+            "p95": 0.30000000447034836,
+            "count": 126
+          },
+          "update": {
+            "mean": 64.23095238143726,
+            "p95": 71.89999999850988,
+            "count": 126
+          },
+          "inference": {
+            "mean": 66.28524590198134,
+            "p95": 71.89999999850988,
+            "count": 122
+          },
+          "inferenceHz": 14.80241206518182,
+          "drawCalls": 15,
+          "triangles": 3630,
+          "backend": "main",
+          "video": {
+            "width": 640,
+            "height": 480,
+            "frameRate": 20
+          }
+        }
+      ],
+      "errors": []
+    },
+    "cpu_worker_fully_idle_renderer_experiment": {
+      "environment": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (AMD, ANGLE Metal Renderer: AMD Radeon Pro 5500M, Unspecified Version)",
+        "dpr": 1,
+        "viewport": [
+          1280,
+          900
+        ]
+      },
+      "measurements": [
+        {
+          "name": "assembly-mouse",
+          "fps": 52.62978800630646,
+          "frameMs": 19.000646551724152,
+          "frameP95": 16.700000000000728,
+          "render": {
+            "mean": 0.6157894736449969,
+            "p95": 1.1000000014901161,
+            "count": 76
+          },
+          "update": {
+            "mean": 0.049677419309975,
+            "p95": 0.10000000149011612,
+            "count": 465
+          },
+          "inference": {
+            "mean": 0,
+            "p95": 0,
+            "count": 0
+          },
+          "inferenceHz": 0,
+          "drawCalls": 16,
+          "triangles": 3630,
+          "backend": "off",
+          "renderHz": 8.603416461955279,
+          "resultAge": {
+            "mean": 0,
+            "p95": 0,
+            "count": 0
+          },
+          "pixelRatio": 1
+        },
+        {
+          "name": "assembly-camera",
+          "fps": 60.002505323813104,
+          "frameMs": 16.665970772442588,
+          "frameP95": 16.799999999999272,
+          "render": {
+            "mean": 0.26666666586429644,
+            "p95": 0.5,
+            "count": 39
+          },
+          "update": {
+            "mean": 0.022083333367481826,
+            "p95": 0.10000000149011612,
+            "count": 480
+          },
+          "inference": {
+            "mean": 64.21499999975785,
+            "p95": 65.5,
+            "count": 80
+          },
+          "inferenceHz": 10.002750756461753,
+          "drawCalls": 16,
+          "triangles": 3630,
+          "backend": "worker",
+          "renderHz": 4.876340993775105,
+          "resultAge": {
+            "mean": 64.98499999949709,
+            "p95": 66.20000000298023,
+            "count": 80
+          },
+          "pixelRatio": 1
+        },
+        {
+          "name": "simulation-mouse",
+          "fps": 60.001753704701194,
+          "frameMs": 16.66617954070981,
+          "frameP95": 16.799999999995634,
+          "render": {
+            "mean": 0.2758333333923171,
+            "p95": 0.4000000059604645,
+            "count": 480
+          },
+          "update": {
+            "mean": 0.027291666700815162,
+            "p95": 0.10000000149011612,
+            "count": 480
+          },
+          "inference": {
+            "mean": 0,
+            "p95": 0,
+            "count": 0
+          },
+          "inferenceHz": 0,
+          "drawCalls": 15,
+          "triangles": 3630,
+          "backend": "off",
+          "renderHz": 60.07734958762764,
+          "resultAge": {
+            "mean": 0,
+            "p95": 0,
+            "count": 0
+          },
+          "pixelRatio": 1
+        },
+        {
+          "name": "simulation-camera",
+          "fps": 60.002505323813104,
+          "frameMs": 16.665970772442588,
+          "frameP95": 16.700000000004366,
+          "render": {
+            "mean": 0.2270833332557231,
+            "p95": 0.3999999985098839,
+            "count": 480
+          },
+          "update": {
+            "mean": 0.023750000058983763,
+            "p95": 0.10000000149011612,
+            "count": 480
+          },
+          "inference": {
+            "mean": 64.73375000040978,
+            "p95": 67.40000000596046,
+            "count": 80
+          },
+          "inferenceHz": 10.0047522573185,
+          "drawCalls": 15,
+          "triangles": 3630,
+          "backend": "worker",
+          "renderHz": 60.028513543911,
+          "resultAge": {
+            "mean": 65.57124999947845,
+            "p95": 68.19999999552965,
+            "count": 80
+          },
+          "pixelRatio": 1
+        }
+      ],
+      "errors": []
+    },
+    "cpu_worker_with_heartbeat": {
+      "environment": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (AMD, ANGLE Metal Renderer: AMD Radeon Pro 5500M, Unspecified Version)",
+        "dpr": 1,
+        "viewport": [
+          1280,
+          900
+        ]
+      },
+      "measurements": [
+        {
+          "name": "assembly-mouse",
+          "fps": 59.627236021350754,
+          "frameMs": 16.77085953878408,
+          "frameP95": 16.700000000000728,
+          "render": {
+            "mean": 0.4711538463687667,
+            "p95": 0.9000000059604645,
+            "count": 104
+          },
+          "update": {
+            "mean": 0.044351464394620274,
+            "p95": 0.10000000149011612,
+            "count": 478
+          },
+          "inference": {
+            "mean": 0,
+            "p95": 0,
+            "count": 0
+          },
+          "inferenceHz": 0,
+          "drawCalls": 16,
+          "triangles": 3630,
+          "backend": "off",
+          "renderHz": 12.972271769091153,
+          "resultAge": {
+            "mean": 0,
+            "p95": 0,
+            "count": 0
+          },
+          "pixelRatio": 1,
+          "video": null
+        },
+        {
+          "name": "assembly-camera",
+          "fps": 60.001753704701194,
+          "frameMs": 16.66617954070981,
+          "frameP95": 16.700000000000728,
+          "render": {
+            "mean": 0.3058823535547537,
+            "p95": 0.5,
+            "count": 68
+          },
+          "update": {
+            "mean": 0.02312499990997215,
+            "p95": 0.10000000149011612,
+            "count": 480
+          },
+          "inference": {
+            "mean": 65.13375000013039,
+            "p95": 68.70000000298023,
+            "count": 80
+          },
+          "inferenceHz": 10.003125976867771,
+          "drawCalls": 16,
+          "triangles": 3630,
+          "backend": "worker",
+          "renderHz": 8.502657080337606,
+          "resultAge": {
+            "mean": 65.86499999938533,
+            "p95": 69.19999999552965,
+            "count": 80
+          },
+          "pixelRatio": 1,
+          "video": {
+            "width": 640,
+            "height": 480,
+            "frameRate": 20
+          }
+        },
+        {
+          "name": "simulation-mouse",
+          "fps": 60.003256961755746,
+          "frameMs": 16.665762004175367,
+          "frameP95": 16.700000000004366,
+          "render": {
+            "mean": 0.33729166734653215,
+            "p95": 0.4000000059604645,
+            "count": 480
+          },
+          "update": {
+            "mean": 0.034166666601474084,
+            "p95": 0.10000000149011612,
+            "count": 480
+          },
+          "inference": {
+            "mean": 0,
+            "p95": 0,
+            "count": 0
+          },
+          "inferenceHz": 0,
+          "drawCalls": 15,
+          "triangles": 3630,
+          "backend": "off",
+          "renderHz": 60.06306621951931,
+          "resultAge": {
+            "mean": 0,
+            "p95": 0,
+            "count": 0
+          },
+          "pixelRatio": 1,
+          "video": null
+        },
+        {
+          "name": "simulation-camera",
+          "fps": 59.50069521864941,
+          "frameMs": 16.80652631578947,
+          "frameP95": 16.799999999995634,
+          "render": {
+            "mean": 0.23193277252697142,
+            "p95": 0.3999999985098839,
+            "count": 476
+          },
+          "update": {
+            "mean": 0.02457983187642418,
+            "p95": 0.10000000149011612,
+            "count": 476
+          },
+          "inference": {
+            "mean": 68.39861111146294,
+            "p95": 70.60000000149012,
+            "count": 72
+          },
+          "inferenceHz": 9.00033751265337,
+          "drawCalls": 15,
+          "triangles": 3630,
+          "backend": "worker",
+          "renderHz": 59.502231333652844,
+          "resultAge": {
+            "mean": 69.18333333327125,
+            "p95": 71.5,
+            "count": 72
+          },
+          "pixelRatio": 1,
+          "video": {
+            "width": 640,
+            "height": 480,
+            "frameRate": 20
+          }
+        }
+      ],
+      "errors": []
+    },
+    "gpu_worker_before_pacing_fix": {
+      "environment": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (AMD, ANGLE Metal Renderer: AMD Radeon Pro 5500M, Unspecified Version)",
+        "dpr": 1,
+        "viewport": [
+          1280,
+          900
+        ]
+      },
+      "measurements": [
+        {
+          "name": "assembly-mouse",
+          "fps": 59.627981399069924,
+          "frameMs": 16.770649895178206,
+          "frameP95": 16.700000000000728,
+          "render": {
+            "mean": 0.4788461539607782,
+            "p95": 1,
+            "count": 104
+          },
+          "update": {
+            "mean": 0.04330543946147464,
+            "p95": 0.10000000149011612,
+            "count": 478
+          },
+          "inference": {
+            "mean": 0,
+            "p95": 0,
+            "count": 0
+          },
+          "inferenceHz": 0,
+          "drawCalls": 16,
+          "triangles": 3630,
+          "backend": "off",
+          "renderHz": 12.98231160044681,
+          "resultAge": {
+            "mean": 0,
+            "p95": 0,
+            "count": 0
+          },
+          "pixelRatio": 1,
+          "video": null
+        },
+        {
+          "name": "assembly-camera",
+          "fps": 60.002505323813104,
+          "frameMs": 16.665970772442588,
+          "frameP95": 16.700000000000728,
+          "render": {
+            "mean": 0.3705882353379446,
+            "p95": 0.5,
+            "count": 68
+          },
+          "update": {
+            "mean": 0.029583333401630323,
+            "p95": 0.10000000149011612,
+            "count": 480
+          },
+          "inference": {
+            "mean": 18.211111110577612,
+            "p95": 22.69999999552965,
+            "count": 81
+          },
+          "inferenceHz": 10.127278637699142,
+          "drawCalls": 16,
+          "triangles": 3630,
+          "backend": "worker-gpu",
+          "renderHz": 8.501912930414093,
+          "resultAge": {
+            "mean": 18.91851851831616,
+            "p95": 23.5,
+            "count": 81
+          },
+          "pixelRatio": 1,
+          "video": {
+            "width": 640,
+            "height": 480,
+            "frameRate": 20
+          }
+        },
+        {
+          "name": "simulation-mouse",
+          "fps": 60.002505323813104,
+          "frameMs": 16.665970772442588,
+          "frameP95": 16.700000000004366,
+          "render": {
+            "mean": 0.33895833293596905,
+            "p95": 0.5,
+            "count": 480
+          },
+          "update": {
+            "mean": 0.031875000024835266,
+            "p95": 0.10000000149011612,
+            "count": 480
+          },
+          "inference": {
+            "mean": 0,
+            "p95": 0,
+            "count": 0
+          },
+          "inferenceHz": 0,
+          "drawCalls": 15,
+          "triangles": 3630,
+          "backend": "off",
+          "renderHz": 60.066072679981545,
+          "resultAge": {
+            "mean": 0,
+            "p95": 0,
+            "count": 0
+          },
+          "pixelRatio": 1,
+          "video": null
+        },
+        {
+          "name": "simulation-camera",
+          "fps": 60.002505323813104,
+          "frameMs": 16.665970772442588,
+          "frameP95": 16.799999999995634,
+          "render": {
+            "mean": 0.3083333331625909,
+            "p95": 0.4000000059604645,
+            "count": 480
+          },
+          "update": {
+            "mean": 0.028958333268140752,
+            "p95": 0.10000000149011612,
+            "count": 480
+          },
+          "inference": {
+            "mean": 12.979012346470062,
+            "p95": 13.799999997019768,
+            "count": 81
+          },
+          "inferenceHz": 10.12398760123422,
+          "drawCalls": 15,
+          "triangles": 3630,
+          "backend": "worker-gpu",
+          "renderHz": 59.99400059990648,
+          "resultAge": {
+            "mean": 13.643209876193676,
+            "p95": 14.600000001490116,
+            "count": 81
+          },
+          "pixelRatio": 1,
+          "video": {
+            "width": 640,
+            "height": 480,
+            "frameRate": 20
+          }
+        }
+      ],
+      "errors": []
+    },
+    "optimized_final": {
+      "environment": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36",
+        "renderer": "ANGLE (AMD, ANGLE Metal Renderer: AMD Radeon Pro 5500M, Unspecified Version)",
+        "dpr": 1,
+        "viewport": [
+          1280,
+          900
+        ]
+      },
+      "measurements": [
+        {
+          "name": "assembly-mouse",
+          "fps": 59.631325003092876,
+          "frameMs": 16.769709543568474,
+          "frameP95": 16.799999999999272,
+          "render": {
+            "mean": 0.47864077688710205,
+            "p95": 0.8999999985098839,
+            "count": 103
+          },
+          "update": {
+            "mean": 0.042236024872486636,
+            "p95": 0.10000000149011612,
+            "count": 483
+          },
+          "inference": {
+            "mean": 0,
+            "p95": 0,
+            "count": 0
+          },
+          "inferenceHz": 0,
+          "drawCalls": 16,
+          "triangles": 3630,
+          "backend": "off",
+          "renderHz": 12.733184161400034,
+          "resultAge": {
+            "mean": 0,
+            "p95": 0,
+            "count": 0
+          },
+          "pixelRatio": 1,
+          "video": null
+        },
+        {
+          "name": "assembly-camera",
+          "fps": 60.0019959083878,
+          "frameMs": 16.66611226611227,
+          "frameP95": 16.700000000000728,
+          "render": {
+            "mean": 0.3161764705882353,
+            "p95": 0.3999999985098839,
+            "count": 68
+          },
+          "update": {
+            "mean": 0.027178423301436595,
+            "p95": 0.10000000149011612,
+            "count": 482
+          },
+          "inference": {
+            "mean": 16.246835442849353,
+            "p95": 19.19999999552965,
+            "count": 158
+          },
+          "inferenceHz": 19.674009139683314,
+          "drawCalls": 16,
+          "triangles": 3630,
+          "backend": "worker-gpu",
+          "renderHz": 8.467295072775098,
+          "resultAge": {
+            "mean": 16.915189873662932,
+            "p95": 20.19999999552965,
+            "count": 158
+          },
+          "pixelRatio": 1,
+          "video": {
+            "width": 640,
+            "height": 480,
+            "frameRate": 20
+          }
+        },
+        {
+          "name": "simulation-mouse",
+          "fps": 60.001753704701194,
+          "frameMs": 16.66617954070981,
+          "frameP95": 16.700000000004366,
+          "render": {
+            "mean": 0.27291666525416075,
+            "p95": 0.3999999985098839,
+            "count": 480
+          },
+          "update": {
+            "mean": 0.028750000133489568,
+            "p95": 0.10000000149011612,
+            "count": 480
+          },
+          "inference": {
+            "mean": 0,
+            "p95": 0,
+            "count": 0
+          },
+          "inferenceHz": 0,
+          "drawCalls": 15,
+          "triangles": 3630,
+          "backend": "off",
+          "renderHz": 60.04353156035889,
+          "resultAge": {
+            "mean": 0,
+            "p95": 0,
+            "count": 0
+          },
+          "pixelRatio": 1,
+          "video": null
+        },
+        {
+          "name": "simulation-camera",
+          "fps": 60.002505323813104,
+          "frameMs": 16.665970772442588,
+          "frameP95": 16.799999999995634,
+          "render": {
+            "mean": 0.24958333177492023,
+            "p95": 0.3999999985098839,
+            "count": 480
+          },
+          "update": {
+            "mean": 0.030000000167638062,
+            "p95": 0.10000000149011612,
+            "count": 480
+          },
+          "inference": {
+            "mean": 18.405660377217913,
+            "p95": 21.399999998509884,
+            "count": 159
+          },
+          "inferenceHz": 19.87326108966576,
+          "drawCalls": 15,
+          "triangles": 3630,
+          "backend": "worker-gpu",
+          "renderHz": 59.99475045936833,
+          "resultAge": {
+            "mean": 19.001886791684342,
+            "p95": 21.799999997019768,
+            "count": 159
+          },
+          "pixelRatio": 1,
+          "video": {
+            "width": 640,
+            "height": 480,
+            "frameRate": 20
+          }
+        }
+      ],
+      "errors": []
+    }
+  },
+  "worker_delegate_probe": {
+    "samples_per_delegate": 44,
+    "warmup_discarded": 6,
+    "CPU": {
+      "mean_ms": 74.62727272781459,
+      "p95_ms": 90.10000000149012
+    },
+    "GPU": {
+      "mean_ms": 17.02045454559001,
+      "p95_ms": 25.899999998509884
+    }
+  },
+  "functional_fallback_smokes": {
+    "method": "Deliberately reject GPU initialization or block both worker attempts. 3.5s synthetic-stream smoke after readiness; not part of matched primary benchmark.",
+    "cpu_worker": {
+      "fps": 60.00057416817385,
+      "frame_p95_ms": 16.700000000000728,
+      "inference_mean_ms": 65.04857142908233,
+      "inference_hz": 9.991150695094376,
+      "worker_targets_after_stop": 0
+    },
+    "main_thread": {
+      "fps": 50.287151061458886,
+      "frame_p95_ms": 50,
+      "inference_mean_ms": 63.588888888971674,
+      "inference_hz": 5.0463988337127255,
+      "worker_targets_after_stop": 0
+    }
+  }
+}

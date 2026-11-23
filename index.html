@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#14171d" />
+    <meta name="description" content="Kynetra is an experimental 3D playground for hands-free spatial interaction. Assemble a kinetic sculpture with hand gestures or a mouse, then explore target practice." />
+    <meta property="og:title" content="Kynetra — A Gesture-Controlled 3D Playground" />
+    <meta property="og:description" content="An experiment in hands-free spatial interaction. Six components. One kinetic sculpture. Your hands in control." />
+    <meta property="og:type" content="website" />
+    <title>Kynetra — A Gesture-Controlled 3D Playground</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#viewport">Skip to playground</a>
+    <div class="app">
+      <header class="topbar">
+        <a class="wordmark" href="./" aria-label="Kynetra home">
+          <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="brand-lockup">Kynetra<span class="project-description">A gesture-controlled playground</span></span>
+        </a>
+        <div class="header-actions">
+          <span class="privacy-badge" title="Camera frames are processed locally in your browser."><svg class="icon" aria-hidden="true"><use href="./icons.svg#shield-check"></use></svg>On-device processing</span>
+          <button id="help-button" class="secondary-button" aria-haspopup="dialog"><svg class="icon" aria-hidden="true"><use href="./icons.svg#help-circle"></use></svg>Controls</button>
+        </div>
+      </header>
+
+      <main>
+        <aside class="sidebar" aria-label="Playground controls">
+          <div class="sidebar-content">
+            <div class="intro">
+              <h1>Assembly studio</h1>
+              <p>Bring six pieces together with gestures or your mouse.</p>
+            </div>
+            <nav class="modes" aria-label="Playground mode">
+              <button id="assembly-mode" class="mode active" aria-pressed="true">
+                <span class="mode-icon"><svg class="icon" aria-hidden="true"><use href="./icons.svg#layers-subtract"></use></svg></span>
+                <span class="mode-copy">Assemble<small>Build your sculpture</small></span>
+                <span class="mode-state" id="assembly-count">0 / 6</span>
+              </button>
+              <button id="simulation-mode" class="mode" aria-pressed="false" disabled>
+                <span class="mode-icon"><svg class="icon" aria-hidden="true"><use href="./icons.svg#target"></use></svg></span>
+                <span class="mode-copy">Target practice<small id="simulation-description">Complete assembly to unlock</small></span>
+                <span class="mode-state lock-state"><svg class="icon" aria-hidden="true"><use href="./icons.svg#lock"></use></svg><span id="mode-lock">Locked</span></span>
+              </button>
+            </nav>
+            <section class="component-section" aria-labelledby="components-title">
+              <div class="section-heading"><h2 id="components-title">Components</h2><span id="progress-label">0 of 6 placed</span></div>
+              <div id="assembly-progress" class="assembly-progress" role="progressbar" aria-label="Assembly progress" aria-valuemin="0" aria-valuemax="6" aria-valuenow="0"></div>
+              <ol id="component-list" class="component-list"></ol>
+              <p class="component-note"><svg class="icon" aria-hidden="true"><use href="./icons.svg#info-circle"></use></svg>Select a piece to reveal its matching outline.</p>
+            </section>
+          </div>
+          <section class="input-section" aria-labelledby="input-title">
+            <div class="input-heading"><span class="input-icon"><svg class="icon" aria-hidden="true"><use href="./icons.svg#hand-stop"></use></svg></span><div><h2 id="input-title">Make it hands-free.</h2><p>Optional camera control</p></div></div>
+            <p>Enable your camera to explore with gestures. Mouse controls are always ready.</p>
+            <button id="camera-button" class="primary-button"><svg class="icon" aria-hidden="true"><use href="./icons.svg#hand-stop"></use></svg><span id="camera-button-label">Enable hand tracking</span></button>
+            <p class="privacy-note"><svg class="icon" aria-hidden="true"><use href="./icons.svg#shield-check"></use></svg>Private by design. No video recorded.</p>
+          </section>
+        </aside>
+
+        <section id="viewport" class="viewport" aria-label="Interactive 3D playground" tabindex="0">
+          <div class="viewport-header">
+            <div class="scene-title"><span class="scene-title-icon"><svg class="icon" aria-hidden="true"><use href="./icons.svg#cube"></use></svg></span><span id="scene-label">Kinetic assembly</span></div>
+            <span class="live-label"><span id="input-dot" class="status-dot"></span><span id="input-label">Mouse control</span></span>
+          </div>
+          <div id="scene" class="scene"></div>
+          <div id="scene-loading" class="scene-loading" role="status">Preparing the playground…</div>
+          <div id="hand-cursor" class="hand-cursor" hidden></div>
+          <div class="scene-caption"><span id="action-label">Pick a piece. Find its place.</span><span id="gesture-label">Drag to assemble · Scroll to zoom</span></div>
+          <div class="view-tools" aria-label="View controls">
+            <button id="zoom-in" aria-label="Zoom in" title="Zoom in"><svg class="icon" aria-hidden="true"><use href="./icons.svg#zoom-in"></use></svg></button>
+            <button id="zoom-out" aria-label="Zoom out" title="Zoom out"><svg class="icon" aria-hidden="true"><use href="./icons.svg#zoom-out"></use></svg></button>
+            <button id="reset-view"><svg class="icon" aria-hidden="true"><use href="./icons.svg#focus-centered"></use></svg>Reset view</button>
+          </div>
+          <div id="score-panel" class="score-panel" hidden><span>Targets hit</span><strong id="score">0</strong><span id="wave">Wave 1</span></div>
+          <div id="completion" class="completion" hidden><span class="completion-icon"><svg class="icon" aria-hidden="true"><use href="./icons.svg#check"></use></svg></span><p>Everything clicks.</p><span>Your sculpture is complete.<br />Ready for a different kind of play?</span><button id="enter-simulation" class="primary-button"><svg class="icon" aria-hidden="true"><use href="./icons.svg#target"></use></svg>Start target practice</button></div>
+          <div class="canvas-notice"><svg class="icon" aria-hidden="true"><use href="./icons.svg#info-circle"></use></svg><p id="notice" class="notice" role="status" aria-live="polite">Drag a solid piece onto its matching wireframe.</p></div>
+        </section>
+      </main>
+
+      <footer class="bottom-bar"><span class="footer-note"><svg class="icon" aria-hidden="true"><use href="./icons.svg#keyboard"></use></svg>A space to experiment.</span><p id="input-hint">Drag piece: move · Drag space: orbit · Scroll: zoom</p><button id="restart" class="quiet-button"><svg class="icon" aria-hidden="true"><use href="./icons.svg#refresh"></use></svg>Start over</button></footer>
+    </div>
+
+    <dialog id="help-dialog" aria-labelledby="help-title">
+      <div class="dialog-header"><h2 id="help-title">Make it move.</h2><button id="close-help" class="quiet-button" aria-label="Close controls">Close <span aria-hidden="true">×</span></button></div>
+      <p>Assemble six components into the central wireframe. Release near the matching outline to snap a piece into place. Complete the sculpture to unlock target practice.</p>
+      <div class="control-columns">
+        <section><h3>With your hands</h3><dl><dt>Open palm</dt><dd>Move your palm to orbit the camera.</dd><dt>Index finger</dt><dd>Point to aim the cursor at a piece or target.</dd><dt>Fist</dt><dd>Close over a piece to grab. Move to position; open to release. Move your hand toward the webcam to bring the piece closer.</dd><dt>Two hands</dt><dd>Spread apart to zoom in; bring together to zoom out.</dd></dl><p>In target practice, aim with your index finger; close your fist to fire repeatedly. Keep your hand in frame with even lighting.</p></section>
+        <section><h3>With a mouse or touch</h3><dl><dt>Drag a piece</dt><dd>Move across the camera-facing plane. Scroll while holding to adjust depth.</dd><dt>Drag empty space</dt><dd>Orbit the sculpture. Right-drag also orbits.</dd><dt>Scroll / + / −</dt><dd>Zoom, or use the view buttons on touch screens.</dd><dt>Target practice</dt><dd>Click or tap a target to fire.</dd><dt>Keyboard</dt><dd>Focus the playground: arrow keys orbit; + / − zoom; Home resets the view; Escape cancels a grab. Component buttons identify pieces; direct manipulation requires a pointer or camera.</dd></dl></section>
+      </div>
+      <p class="dialog-note">Camera access requires localhost or HTTPS. No webcam? You can still complete both modes with a mouse.</p>
+    </dialog>
+    <video id="camera-video" autoplay playsinline muted hidden></video>
+    <noscript><p class="noscript">Kynetra needs JavaScript and a WebGL2-capable browser to run.</p></noscript>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

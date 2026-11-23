@@ -1,0 +1,41 @@
+# Dependencies and generated output
+node_modules/
+dist/
+coverage/
+.nyc_output/
+*.tsbuildinfo
+
+# Credentials and machine-specific configuration
+.env
+.env.*
+*.local
+*.pem
+*.key
+*.p12
+*.pfx
+.npmrc
+.aws/
+.ssh/
+.vercel/
+.agents/
+.codex/
+
+# Local caches, logs, and profiling runs
+.vite/
+.cache/
+.eslintcache
+logs/
+*.log
+performance-run*.json
+*.trace
+tmp/
+temp/
+
+# Editors and operating systems
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
